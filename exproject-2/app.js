@@ -32,6 +32,19 @@ app.all(/s/, (req, res) => {
     res.send("If we found s char in any postion in URL this page will be visible. otherwise Page Not Found.");
 });
 
+//how to use [Array Of Call-back] .
+//First Example of more the One CallBack. 
+    //In the first exp, we use ',' to sepret first fun() to create another CAllBACK(); 
+    //And we cannot use res.send(); at a same time.
+    // If your not usig next funcation then user browser will stack in loop.
+    app.all('/morethenone-callback', (req, res, next) => {
+        console.log('first call back fun()')
+        // res.send("About Page");
+        next();
+    }, (req, res) => {
+        res.send("More then one call back");
+    });
+
 
 
 //How to set defoult Page or Page not found Page.
