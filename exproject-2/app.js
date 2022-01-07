@@ -82,7 +82,7 @@ app.all(/s/, (req, res) => {
 //Now we using app.route for set defoult path to all methodes.
 // ' ; ' using semicolan is not reqired in Express or Chain Route CallBack.
     // First example of Chain Route CallBack
-    app.route('ch-rtcallback')
+    app.route('/ch-rtcallback')
         .get((req, res) => {
             res.send("Display all student useing GET Method");
         })
@@ -93,21 +93,24 @@ app.all(/s/, (req, res) => {
             res.send("Update student useing PUT Method");
         })
 
-    // Second example of Chain Route CallBack
+    // Second example of Chain Route CallBack/.ALL /Validiation
     //ALL method and validation
     //use space when use Chain Route
-    app.route('ch-rtcallback-all')
+    app.route('/ch-rtcallback-all')
         .all((req, res, next) =>{
             console.log('First .ALL Methoed will Display')      // No matter custmor reqest this will excute all the time. so we can ser validication in here.
             next()                             // we create business login in between this and use next().
         })
         .get((req, res) => {
+            console.log('GET METHOD')
             res.send("Display all student useing GET Method");
         })
         .post((req, res) => {
+            console.log('POST METHOD')
             res.send("Add new student useing POST Method");
         })
         .put((req, res) => {
+            console.log('PUT METHOD')
             res.send("Update student useing PUT Method");
         })
 
