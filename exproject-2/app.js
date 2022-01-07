@@ -8,5 +8,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen( port, () => {
-    console.log(`Server lesting http://localhost:${port}`)
+    console.log(`Server lesting at http://localhost:${port}`)
 });
