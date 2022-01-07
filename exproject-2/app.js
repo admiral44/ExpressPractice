@@ -18,9 +18,13 @@ app.all('/about', (req, res) => {
     res.send("About Page");
 });
 app.all('/contact', (req, res) => {
-    res.send("contact Page");
+    res.send("Contact Page");
 });
 
+//Usees of String Pattern.
+app.all('/ab?cd', (req, res) => {
+    res.send("This path can show page if we hit acd or abcd, but bcd is not allowed it will show you page not found. Other wise  page not page will displyed.");
+});
 
 
 
