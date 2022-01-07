@@ -13,6 +13,17 @@ app.all('/shubham/*', (req, res) => {
     res.send("Diffrent use of * start symbol");
 });
 
+//Usees of String Path.
+app.all('/about', (req, res) => {
+    res.send("About Page");
+});
+app.all('/contact', (req, res) => {
+    res.send("contact Page");
+});
+
+
+
+
 //How to set defoult Page or Page not found Page.
 app.all('*', (req, res) => {
     res.send("Page Not found ..!!!");
