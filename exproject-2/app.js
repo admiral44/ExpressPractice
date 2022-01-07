@@ -8,6 +8,11 @@ app.get('/', (req, res) => {
     res.send("Hello shubham walcome to Express Rounting project-2");
 });
 
+//Usees of Asterisc symbol.
+app.all('/shubham/*', (req, res) => {
+    res.send("Diffrent use of * start symbol");
+});
+
 //How to set defoult Page or Page not found Page.
 app.all('*', (req, res) => {
     res.send("Page Not found ..!!!");
