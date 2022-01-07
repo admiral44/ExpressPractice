@@ -40,10 +40,26 @@ app.all(/s/, (req, res) => {
     app.all('/morethenone-callback', (req, res, next) => {
         console.log('first call back fun()')
         // res.send("About Page");
-        next(); // use next perop in this fun() to move to the next callback
+        next(); // use [next] prope in this fun() we can move to the next callback.
     }, (req, res) => {
         res.send("More then one call back");
     });
+
+    //Second Example of Arrays[] of CallBack.
+    //In this example we careate 3 callback. using ES6 JS.
+    const cb1 = (req, res, next) => {
+        console.log('First Call Back');
+        next();                             // we create business login in between this and use next(). 
+    }
+    const cb2 = (req, res, next) => {
+        console.log('Second Call Back');
+        next();                             // we create business login in between this and use next(). 
+    }
+    const cb3 = (req, res, next) => {
+        console.log('Third Call Back');
+        res.send('This is Arrays of CallBack.');
+    }
+    app.get('/arraycallback', [ cb1, cb2, cb3 ]);
 
 
 
