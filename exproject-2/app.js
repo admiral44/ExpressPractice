@@ -26,6 +26,12 @@ app.all('/ab?cd', (req, res) => {
     res.send("This path can show page if we hit acd or abcd, but bcd is not allowed it will show you page not found. Other wise  page not page will displyed.");
 });
 
+//Usees of Reguler Expression Path.
+// in Reguler expression '' are not allowed or not used in it.
+app.all(/s/, (req, res) => {
+    res.send("If we found s char in any postion in URL this page will be visible. otherwise Page Not Found.");
+});
+
 
 
 //How to set defoult Page or Page not found Page.
