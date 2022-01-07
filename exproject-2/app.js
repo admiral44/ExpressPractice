@@ -78,6 +78,22 @@ app.all(/s/, (req, res) => {
         res.send("FORTH CAllBACK, Combination of Call Backs");
     });
 
+//Chain Rout CALLBACK.
+//Now we using app.route for set defoult path to all methodes.
+// ' ; ' using semicolan is not reqired in Express or Chain Route CallBack.
+    // First example of Chain Route CallBack
+    app.route('ch-rtcallback')
+        .get((req, res) => {
+            res.send("Display all student useing GET Method");
+        })
+        .post((req, res) => {
+            res.send("Add new student useing POST Method");
+        })
+        .put((req, res) => {
+            res.send("Update student useing PUT Method");
+        })
+
+
 
 
 //How to set defoult Page or Page not found Page.
