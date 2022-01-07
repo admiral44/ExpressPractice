@@ -95,20 +95,21 @@ app.all(/s/, (req, res) => {
 
     // Second example of Chain Route CallBack
     //ALL method and validation
+    //use space when use Chain Route
     app.route('ch-rtcallback-all')
-    .all((req, res, next) =>{
-        console.log('First .ALL Methoed will Display')      // No matter custmor reqest this will excute all the time. so we can ser validication in here.
-        next()                             // we create business login in between this and use next().
-    })
-    .get((req, res) => {
-        res.send("Display all student useing GET Method");
-    })
-    .post((req, res) => {
-        res.send("Add new student useing POST Method");
-    })
-    .put((req, res) => {
-        res.send("Update student useing PUT Method");
-    })
+        .all((req, res, next) =>{
+            console.log('First .ALL Methoed will Display')      // No matter custmor reqest this will excute all the time. so we can ser validication in here.
+            next()                             // we create business login in between this and use next().
+        })
+        .get((req, res) => {
+            res.send("Display all student useing GET Method");
+        })
+        .post((req, res) => {
+            res.send("Add new student useing POST Method");
+        })
+        .put((req, res) => {
+            res.send("Update student useing PUT Method");
+        })
 
 
 
