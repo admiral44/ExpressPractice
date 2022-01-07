@@ -65,14 +65,15 @@ app.all(/s/, (req, res) => {
     // Do not use same varibale like [cb1,cb2].
     const tcb1 = (req, res, next) => {
         console.log('First Call Back');
-        next();                             // we create business login in between this and use next(). 
+        next();                             // we create business login in between this and use next().
     }
     const tcb2 = (req, res, next) => {
         console.log('Second Call Back');
-        next();                             // we create business login in between this and use next(). 
+        next();                             // we create business login in between this and use next().
     }
     app.get('/combofcallback', [ tcb1, tcb2 ], (req, res, next) => {
         console.log('Third Call Back')
+        next();                             // we create business login in between this and use next().
     }, (req, res) => {
         res.send("FORTH CAllBACK, Combination of Call Backs");
     });
